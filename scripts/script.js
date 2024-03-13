@@ -12,4 +12,8 @@ searchButton.addEventListener('click', () => {
     }
 });
 
-getWeatherData();
+function getWeatherData(location) {
+
+}
+
+  

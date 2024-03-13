@@ -1,0 +1,15 @@
+body {
+    font-family: roboto, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: darkcyan;
+    color: white;
+    font-weight: 900;
+}
+#container {
+    margin: auto;
+    text-align: center;
+}

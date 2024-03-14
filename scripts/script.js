@@ -2,6 +2,7 @@
 const searchButton = document.getElementById('search-button');
 const searchInput = document.getElementById('search-input');
 const weatherInfo = document.getElementById('weather-info');
+const sevenDayForcast = document.getElementById('seven-day-forcast');
 
 searchButton.addEventListener('click', () => {
     const location = searchInput.value.trim();
@@ -30,6 +31,7 @@ function getWeatherData(location) {
                 //set variable for 7 day forcast
                 const forecasts = data.properties.periods;
                 weatherInfo.innerHTML = '<h2>7-Day Forecast</h2>';
+                sevenDayForcast.innerHTML = ''; 
                 forecasts.forEach(forecast => { // loop forcasts 
                     const dayForecast = document.createElement('div'); //create new div for each period
                     dayForecast.classList.add('day-forecast');
@@ -38,7 +40,7 @@ function getWeatherData(location) {
                         <p>Temperature: ${forecast.temperature}</p>
                         <p>Description: ${forecast.shortForecast}</p>
                     `;
-                    weatherInfo.appendChild(dayForecast); //append to weatherinfo div
+                    sevenDayForcast.appendChild(dayForecast); //append to weatherinfo div
                 });
             } else { //else if not found through NWS return unknown location
                 weatherInfo.innerHTML = '<p>No weather information found for this location.</p>';
